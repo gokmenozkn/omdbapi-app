@@ -1,0 +1,121 @@
+.search__results {
+  // background-color: red;
+  width: 65%;
+  min-height: 190vh;
+  margin: auto;
+  margin-bottom: 10rem;
+
+  &--heading {
+    font-size: 4.5rem;
+    margin: 8rem 0;
+    font-weight: 600;
+  }
+
+  &--span {
+    color: #F5C518;
+  }
+
+  .moviescontainer {
+    margin-top: 4rem;
+    // background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-column-gap: 4.2rem;
+    grid-row-gap: 2.4rem;
+
+    &__movie {
+      position: relative;
+
+      .image__container {
+        height: 50vh;
+        background-color: red;
+        position: relative;
+        display: flex;
+        background-image: url(../../assets/img/godfather.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 3rem;
+
+        &--img {
+          height: 100%;
+          width: 100%;
+          background-color: black;
+          border-radius: 3rem;
+        }
+
+        &--type {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #F5C518;
+          height: 5vh;
+          width: 12rem;
+          color: #000;
+          font-size: 1.6rem;
+          font-weight: 400;
+          border-radius: 1rem;
+          position: absolute;
+          top: 85%;
+          left: 3%;
+        }
+
+        &--favbtn {
+          display: flex;
+          height: 4rem;
+          width: 4rem;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50rem;
+          background-color: #fff;
+          box-shadow: 0px 14px 26px rgba(39, 13, 48, 0.25);
+          position: absolute;
+          top: 86%;
+          right: 4%;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__paragraph {
+        // background-color: beige;
+
+        &--year {
+          color: #F5C518;
+          font-weight: 600;
+          font-size: 1.8rem;
+        }
+
+        &--heading {
+          font-weight: 600;
+          font-size: 2.8rem;
+          margin-bottom: 1.8rem;
+          margin-top: .7rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 3rem;
+          width: 90%;
+          color: rgba(0, 0, 0, 0.5);
+          margin-bottom: 5rem;
+        }
+      }
+
+      &__imdb {
+        display: flex;
+        align-items: center;
+        margin: 3rem 0;
+
+        &--rate {
+          font-size: 1.8rem;
+          font-weight: 600;
+          margin-left: 1.8rem;
+        }
+
+      }
+    }
+  }
+}
