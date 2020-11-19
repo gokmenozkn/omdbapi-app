@@ -54,6 +54,26 @@
       height: 100%;
       vertical-align: middle;
 
+      form {
+        // background-color: red;
+        display: flex;
+
+        button {
+          background-color: none;
+          border: none;
+
+          &:hover {
+            cursor: pointer;
+            background-color: none;
+            border: none;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
       &__input {
         border: none;
         width: 100%;
@@ -76,7 +96,6 @@
       i {
         font-size: 1.7rem;
         margin-left: -2rem;
-        margin-top: .3rem;
         color: #c7c7c7;
       }
     }

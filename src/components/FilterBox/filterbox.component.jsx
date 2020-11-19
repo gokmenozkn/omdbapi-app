@@ -2,7 +2,7 @@ import React from 'react';
 
 import "./filterbox.scss";
 
-export default function FilterBox() {
+export default function FilterBox({ handleSubmit, onChange, inputValue }) {
   return (
     <section className="filterbox">
       <select className="filterbox__select" name="years" required>
@@ -24,10 +24,15 @@ export default function FilterBox() {
           <tbody>
             <tr>
               <td>
-                <input className="search__input" type="text" placeholder="Enter movie name here" />
-              </td>
-              <td>
-                <a href="/"><i className="fas fa-search"></i></a>
+                <form onSubmit={handleSubmit}>
+                  <input 
+                    value={inputValue}
+                    onChange={onChange}
+                    className="search__input" 
+                    type="text" 
+                    placeholder="Enter movie name here" />
+                  <button type="submit"><i className="fas fa-search"></i></button>
+                </form>
               </td>
             </tr>
           </tbody>
@@ -37,6 +42,7 @@ export default function FilterBox() {
       <div className="filterbox__button">
         <a href="/">Search <span className="filterbox__button--arrow">&#8594;</span></a>
       </div>
-  </section>
+    </section>
   )
+
 }
