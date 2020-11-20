@@ -3,6 +3,7 @@ import FilterBox from '../../components/FilterBox/filterbox.component'
 import Header from '../../components/Header/header.component'
 import SearchResults from '../../components/SearchResults/searchresults.component'
 import axios from 'axios';
+import NavBottom from '../../components/NavBottom/navbottom.component';
 
 export default class MovieSearch extends Component {
   constructor(props) {
@@ -43,7 +44,7 @@ export default class MovieSearch extends Component {
   render() {
     return (
       <>
-        <Header />
+        <NavBottom />
         <FilterBox handleSubmit={this.handleSubmit} onChange={this.onChange} inputValue={this.state.inputValue} />
         <SearchResults movies={this.state.foundItems} inputValue={this.state.inputValue} />
       </>

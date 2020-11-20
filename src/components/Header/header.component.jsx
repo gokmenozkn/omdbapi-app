@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBottom from '../NavBottom/navbottom.component'
 
 import "./header.scss"
 
@@ -28,9 +27,7 @@ export default function Header() {
             </tr>
           </table>
         </div>
-      </nav>
-
-      <NavBottom />      
+      </nav>    
     </section>
   )
 }

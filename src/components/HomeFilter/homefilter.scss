@@ -1,4 +1,4 @@
-.filterbox {
+.filter {
   display: flex;
   justify-content: space-around;
   background-color: #FFFFFF;
@@ -6,7 +6,10 @@
   width: 65%;
   box-shadow: 0px 16px 28px rgba(141, 40, 173, 0.15);
   border-radius: 10px;
-  margin: 4rem auto;
+  margin: auto;
+  position: relative;
+  z-index: 5000;
+  margin-top: -5rem;
 
   padding: 2rem;
 
@@ -95,7 +98,6 @@
 
       i {
         font-size: 1.7rem;
-        margin-left: -2rem;
         color: #c7c7c7;
       }
     }

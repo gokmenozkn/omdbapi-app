@@ -1,0 +1,60 @@
+.banner {
+  background-image: url(../../assets/img/people.png);
+  height: 65vh;
+  position: relative;
+  z-index: 2;
+
+  &__text {
+    width: 65%;
+    height: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    color: white;
+    position: relative;
+    // background-color: red;
+
+    &--img {
+      background-image: url(../../assets/img/circles.png);
+      background-size: cover;
+      height: 15rem;
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 15rem;
+      z-index: 1;
+    }
+
+    &--heading1 {
+      font-weight: 500;
+      position: relative;
+      z-index: 3;
+      font-size: 6.5rem;
+    }
+
+    &--heading2 {
+      font-weight: 600;
+      font-size: 6.5rem;
+      margin-top: -1rem;
+      margin-bottom: 3rem;
+    }
+
+    &--paragraph {
+      font-weight: 400;
+      font-size: 1.6rem;
+      width: 50%;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+  }
+
+  &__yellow {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(245, 197, 24, 0.9);
+    z-index: -1;
+  }
+}
