@@ -9,6 +9,7 @@ class SearchResults extends React.Component {
   static contextType = MovieContext;
 
   render() {
+    const favorites = JSON.parse(localStorage.getItem("favorites"));
     const { movies, addFavorite, deleteFavorite } = this.context;
     const { history } = this.props;
 
@@ -24,13 +25,25 @@ class SearchResults extends React.Component {
                   className="image__container"
                 >
                   <div className="image__container--type">Action</div>
-                  <div 
+                  {favorites && favorites.find( some => some.movie.imdbID === movie.imdbID ) ? (
+                    <div 
+                    className="image__container--favbtn"
+                    onClick={() => deleteFavorite(movie)}
+                  >
+                    
+                    <i className="fas fa-heart added"></i>
+                    {/* <i className="fas fa-heart added"></i> */}
+                  </div>
+                  ): (
+                    <div 
                     className="image__container--favbtn"
                     onClick={() => addFavorite(movie)}
                   >
+                    
                     <i className="far fa-heart add"></i>
                     {/* <i className="fas fa-heart added"></i> */}
                   </div>
+                  )  }
                 </div>
                 <div className="moviescontainer__movie__imdb">
                   <div className="moviescontainer__movie__imdb--img">

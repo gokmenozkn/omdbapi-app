@@ -9,7 +9,8 @@ export class MovieProvider extends React.Component {
     this.state = {
       movies: [],
       inputValue: '',
-      favorites: []
+      favorites: [],
+      inFavorite: true
     }
   }
 
@@ -23,7 +24,7 @@ export class MovieProvider extends React.Component {
         const items = res.data.Search;
         this.setState({ movies: items });
       }).catch(e => this.setState({ movies: [] }));
-      
+      console.log(this.state.movies)
       this.setState({
         inputValue: ''
       });
@@ -49,6 +50,8 @@ export class MovieProvider extends React.Component {
       localStorage.setItem('favorites', JSON.stringify(favorites));
       console.log(JSON.parse(localStorage.getItem('favorites')));
       this.setState({ favorites: favorites });
+      
+      
       console.log("Favori filmlerim:", favorites);
     }
   }
@@ -73,7 +76,7 @@ export class MovieProvider extends React.Component {
           onSubmit: this.onSubmit,
           onChange: this.onChange,
           addFavorite: this.addFavorite,
-          deleteFavorite: this.deleteFavorite
+          deleteFavorite: this.deleteFavorite,
         }}
       >
         {this.props.children}
