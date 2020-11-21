@@ -1,7 +1,7 @@
 .search__results {
   // background-color: red;
   width: 65%;
-  min-height: 190vh;
+  min-height: 100vh;
   margin: auto;
   margin-bottom: 10rem;
 
@@ -72,6 +72,18 @@
           top: 86%;
           right: 4%;
 
+          i {
+            font-size: 1.4rem;
+          }
+
+          .add {
+            color: #F5C518;
+          }
+
+          .added {
+            color: #F5C518;
+          }
+
           &:hover {
             cursor: pointer;
           }
@@ -95,6 +107,7 @@
 
           &:hover {
             cursor: pointer;
+            color: #F5C518;
           }
         }
 

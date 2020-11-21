@@ -46,9 +46,23 @@ export class MovieProvider extends React.Component {
     if (stored) { return }
     else {
       favorites.push({ movie: movie });
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      console.log(JSON.parse(localStorage.getItem('favorites')));
       this.setState({ favorites: favorites });
       console.log("Favori filmlerim:", favorites);
     }
+  }
+
+  deleteFavorite = (movie) => {
+    const favorites = this.state.favorites;
+    const movieId = movie.imdbID;
+
+    const newFavorites = favorites.filter(item => {
+      return item.movie.imdbID !== movieId
+    });
+    this.setState({ favorites: newFavorites });
+    localStorage.removeItem('favorites');
+    localStorage.setItem('favorites', JSON.stringify(newFavorites));
   }
 
   render() {
@@ -58,7 +72,8 @@ export class MovieProvider extends React.Component {
           ...this.state,
           onSubmit: this.onSubmit,
           onChange: this.onChange,
-          addFavorite: this.addFavorite
+          addFavorite: this.addFavorite,
+          deleteFavorite: this.deleteFavorite
         }}
       >
         {this.props.children}

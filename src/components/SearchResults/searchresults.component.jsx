@@ -1,6 +1,5 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom';
-import hearth from "../../assets/img/hearth.png"
 import imdb from "../../assets/img/IMDB-icon.png"
 import { MovieContext } from '../../context/MovieContext';
 
@@ -10,14 +9,14 @@ class SearchResults extends React.Component {
   static contextType = MovieContext;
 
   render() {
-    const { movies, addFavorite } = this.context;
+    const { movies, addFavorite, deleteFavorite } = this.context;
     const { history } = this.props;
 
     return (
       <main className="search__results">
         <h1 className="search__results--heading">Search Results <span className="search__results--span">Godfather</span></h1>
         <div className="moviescontainer">
-          {movies.length && 
+          {movies.length > 0 ?
             movies.map(movie => (
               <div key={movie.imdbID} className="moviescontainer__movie moviescontainer__movie--1">
                 <div
@@ -29,7 +28,8 @@ class SearchResults extends React.Component {
                     className="image__container--favbtn"
                     onClick={() => addFavorite(movie)}
                   >
-                    <img src={hearth} alt="favbtn" />
+                    <i className="far fa-heart add"></i>
+                    {/* <i className="fas fa-heart added"></i> */}
                   </div>
                 </div>
                 <div className="moviescontainer__movie__imdb">
@@ -51,6 +51,8 @@ class SearchResults extends React.Component {
                 </div>
               </div>
             ))
+            :
+            <div></div>
           }
         </div>
       </main>

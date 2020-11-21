@@ -68,6 +68,18 @@
           top: 86%;
           right: 4%;
 
+          i {
+            font-size: 1.4rem;
+          }
+
+          .add {
+            color: #F5C518;
+          }
+
+          .added {
+            color: #F5C518;
+          }
+
           &:hover {
             cursor: pointer;
           }
@@ -88,6 +100,11 @@
           font-size: 2.8rem;
           margin-bottom: 1.8rem;
           margin-top: .7rem;
+
+          &:hover {
+            cursor: pointer;
+            color: #F5C518;
+          }
         }
 
         p {
