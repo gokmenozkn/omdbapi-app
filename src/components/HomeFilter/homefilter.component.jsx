@@ -1,8 +1,17 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom';
 
 import "./homefilter.scss"
 
-export default function HomeFilter() {
+function HomeFilter() {
+  let history = useHistory();
+
+  function goResults() {   
+    history.push("/results")
+    console.log(history);
+  }
+
+
   return (
     <section className="filter">
       <select className="filter__select" name="years" required>
@@ -30,8 +39,14 @@ export default function HomeFilter() {
       </div>
 
       <div className="filter__button">
-        <a href="/">Search <span className="filter__button--arrow">&#8594;</span></a>
+        <button 
+          onClick={goResults}
+        >
+          Search <span className="filter__button--arrow">&#8594;</span>
+        </button>
       </div>
     </section>
   )
 }
+
+export default HomeFilter;

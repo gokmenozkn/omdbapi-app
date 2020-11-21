@@ -20,9 +20,7 @@ export class MovieProvider extends React.Component {
       axios.get(
         `${process.env.REACT_APP_API_URL}/?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.inputValue}`
       ).then(res => {
-        // console.log(res);
         const items = res.data.Search;
-        // console.log("Item length:", items.length);
         this.setState({ movies: items });
       }).catch(e => this.setState({ movies: [] }));
       
@@ -49,6 +47,7 @@ export class MovieProvider extends React.Component {
     else {
       favorites.push({ movie: movie });
       this.setState({ favorites: favorites });
+      console.log("Favori filmlerim:", favorites);
     }
   }
 

@@ -1,4 +1,4 @@
-.search__results {
+.favorite__results {
   // background-color: red;
   width: 65%;
   min-height: 190vh;
@@ -9,10 +9,6 @@
     font-size: 4.5rem;
     margin: 8rem 0;
     font-weight: 600;
-  }
-
-  &--span {
-    color: #F5C518;
   }
 
   .moviescontainer {
@@ -31,7 +27,7 @@
         background-color: red;
         position: relative;
         display: flex;
-        // background-image: url(../../assets/img/godfather.png);
+        background-image: url(../../assets/img/godfather.png);
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 3rem;
@@ -92,10 +88,6 @@
           font-size: 2.8rem;
           margin-bottom: 1.8rem;
           margin-top: .7rem;
-
-          &:hover {
-            cursor: pointer;
-          }
         }
 
         p {

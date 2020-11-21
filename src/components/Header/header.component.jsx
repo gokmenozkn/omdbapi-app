@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 import "./header.scss"
 
@@ -7,12 +8,12 @@ export default function Header() {
     <section className="header">
       <nav className="header__navbar">
         <div className="header__navbar--logo">
-          <a href="/">Movie<span>UP</span></a>
+          <Link to="/">Movie<span>UP</span></Link>
         </div>
         <div className="header__navbar--links">
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/" className="active">Favorites</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link className="active" to="/favorites">Favorites</Link></li>
           </ul>
         </div>
         <div className="header__navbar--searchbox">
@@ -22,7 +23,7 @@ export default function Header() {
                 <input className="search__input" type="text" placeholder="Enter movie name here" />
               </td>
               <td>
-                <a href="/"><i className="fas fa-search"></i></a>
+                <Link to="/"><i className="fas fa-search"></i></Link>
               </td>
             </tr>
           </table>

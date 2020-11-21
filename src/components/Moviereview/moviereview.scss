@@ -1,0 +1,104 @@
+.overview {
+  // background-color: yellowgreen;
+  width: 65%;
+  margin: 7rem auto;
+  display: grid;
+  grid-template-columns: 15vw 1fr;
+  grid-column-gap: 2rem;
+
+  &__img {
+    height: 40vh;
+    // width: 23vw;
+    // background-image: url(../../assets/img/godfather.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 3rem;
+  }
+
+  &__texts {
+
+    &--paragraph {
+      padding-right: 3.5rem;
+
+      &__genres {
+        margin-top: 2.2rem;
+
+        ul {
+          display: flex;
+          width: 40%;
+          justify-content: space-between;
+        }
+
+        li {
+          background-color: #F5C518;
+          padding: 1.2rem 3rem;
+          border-radius: 1rem;
+        }
+      }
+
+
+      p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.5);
+        margin-top: 2.5rem;
+        height: 18vh;
+        // background-color: red;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: #F5C518;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 600;
+        color: #000000;
+      }
+    }
+
+    &--rating {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 8vh;
+
+      &__img {
+        display: flex;
+        align-items: center;
+      }
+
+      &__span {
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin-left: 1rem;
+      }
+
+      &__favbtn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 6vh;
+        border: none;
+        padding: 1.2rem 1rem;
+        background: #F5C518;
+        box-shadow: 0px 14px 26px rgba(39, 13, 48, 0.25);
+        border-radius: 8px;
+        margin-right: 3rem;
+
+        img {
+          width: 18%;
+        }
+
+        span {
+          margin-left: 1rem;
+          font-size: 1.5rem;
+          font-weight: 500;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
