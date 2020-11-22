@@ -5,7 +5,7 @@ import "./moviereview.scss"
 
 export default function Moviereview({ movieData, genres }) {
   const favorites = JSON.parse(localStorage.getItem("favorites"));
-  const stored = favorites.find(o => o.movie.imdbID == movieData.imdbID);
+  const stored = favorites.find(o => o.movie.imdbID === movieData.imdbID);
 
   return (
     <main className="overview">
@@ -24,7 +24,6 @@ export default function Moviereview({ movieData, genres }) {
             {stored ?
               (<span>Added to favorites</span>) : (<span>Add to favorites</span>)
             }
-            {/* <span>Add to favorites</span> */}
           </button>
         </div>
 
