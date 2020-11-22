@@ -3,7 +3,10 @@ import imdb from "../../assets/img/IMDB-icon.png"
 import addfav from "../../assets/img/addfav.svg"
 import "./moviereview.scss"
 
-export default function Moviereview({ movieData }) {
+export default function Moviereview({ movieData, genres }) {
+  const favorites = JSON.parse(localStorage.getItem("favorites"));
+  const stored = favorites.find(o => o.movie.imdbID == movieData.imdbID);
+
   return (
     <main className="overview">
       <div 
@@ -18,7 +21,10 @@ export default function Moviereview({ movieData }) {
           </div>
           <button className="overview__texts--rating__favbtn">
             <img src={addfav} alt="addfav" />
-            <span>Add to favorites</span>
+            {stored ?
+              (<span>Added to favorites</span>) : (<span>Add to favorites</span>)
+            }
+            {/* <span>Add to favorites</span> */}
           </button>
         </div>
 
@@ -31,9 +37,7 @@ export default function Moviereview({ movieData }) {
 
           <div className="overview__texts--paragraph__genres">
             <ul>
-              <li>Action</li>
-              <li>Biography</li>
-              <li>Horror</li>
+              { genres.map((genre, index) => <li key={index}>{genre}</li>) }
             </ul>
           </div>
 
